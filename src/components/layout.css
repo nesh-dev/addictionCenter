@@ -595,3 +595,35 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+.posts-container {
+  display: flex;
+  justify-content: space-around;
+}
+.excerpt {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+.featured-image {
+  height: 200px;
+  margin-bottom: 1rem;
+}
+body {
+  background: #EEE;
+}
+h1 {
+  font-family: monospace;
+}
+a {
+  padding: 0.2rem 0.5rem;
+  border: 2px solid black;
+  color: black;
+  text-decoration: none;
+  box-shadow: 0px 0px 11px -4px black;
+  margin: 1rem;
+}
+.post-preview {
+  box-shadow: 0 0 20px 10px #CCC;
+  margin: 1rem;
+  padding: 1rem;
+}
