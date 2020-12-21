@@ -18,7 +18,7 @@
     "gatsby-source-wordpress": "^3.8.0",
     "gatsby-source-wordpress-experimental": "^5.0.1",
     "gatsby-source-wordpress-menus": "^1.1.4",
-    "gatsby-transformer-sharp": "^2.6.0",
+    "gatsby-transformer-sharp": "^2.9.0",
     "jquery": "^3.5.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",

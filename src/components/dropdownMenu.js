@@ -25,9 +25,9 @@ const DropdownMenuItem = ({ parent, children }) => {
         display: show ? "block" : "none", 
          }}>
           <div className="flex-square">
-            {/* {children.map(child => (
+            {children.map(child => (
               <Link key={child.id} to={child.path}>{child.label}</Link>
-            ))} */}
+            ))}
           </div>
         </div>
       </div>

@@ -4,7 +4,9 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"; 
 import Covid19Banner from '../components/covid19Banner';
-import RehabCenter from "../components/rehabCenters"
+import RehabCenter from "../components/rehabCenters"; 
+import RehabListing from "../components/RehabListings"
+import Image from "../components/image";
 
 const IndexPage = ({ data }) => (
     <Layout>
@@ -21,12 +23,14 @@ const IndexPage = ({ data }) => (
           </div>
         ))}
       </section> */}
-
       <section>
       <Covid19Banner />
       </section>
       <section> 
       <RehabCenter />
+      </section>
+      <section> 
+        <RehabListing />
       </section>
 
     </Layout>
@@ -64,6 +68,7 @@ export const pageQuery = graphql`
                 }
               }
             }
+            
         }
     }
   }
