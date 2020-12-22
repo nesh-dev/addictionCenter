@@ -19,7 +19,9 @@ class MainMenu extends Component {
       style={{
         fontSize: `36px`,
         textAlign: `center`,
-        width: `20%`,
+        fontWeight: `bold`, 
+        fontFamily: `bold`,
+        width: `25%`,
         marginRight: `10px`,
       }}
       >

@@ -51,7 +51,6 @@ const Layout = ({ children }) => {
         style={{
         }}
       >
-       
         <main>{children}</main>
       </div>
     </div>
