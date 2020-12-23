@@ -1,69 +1,110 @@
-import React, { Component } from "react"
-import DropdownMenuItem from '../components/dropdownMenu';
-import MenuItem from '../components/menuItem';
+import React, { Component, useState, useEffect } from "react"
+import DropdownMenuItem from "../components/dropdownMenu"
+import MenuItem from "../components/menuItem"
+import { Row, Col, Container, Navbar, Nav } from "react-bootstrap"
+import { Link } from "gatsby"
+import DropDownBar from "./dropDownBar"
+
+const MainMenu = ({ children }) => {
+  const [scrollPosition, setScrollPosition] = useState(0)
 
 
-class MainMenu extends Component {
-  render() {
-    const data = this.props.menu.wpMenu.menuItems.nodes
-      ? this.props.menu.wpMenu.menuItems.nodes.filter(
-          menuItem => menuItem.parentId === null
-        )
-      : null
-      console.log(data, '???')
+  const handleScroll = () => {
+    const position = window.pageYOffset
+    setScrollPosition(position)
+  }
 
-    return (
-    
-        <>
-         <div
-      style={{
-        fontSize: `36px`,
-        textAlign: `center`,
-        fontWeight: `bold`, 
-        fontFamily: `bold`,
-        width: `25%`,
-        marginRight: `10px`,
-      }}
-      >
-      Addiction <span
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
+  const data = children.wpMenu.menuItems.nodes
+    ? children.wpMenu.menuItems.nodes.filter(
+        menuItem => menuItem.parentId === null
+      )
+    : null
+
+  return (
+    <>
+      <Navbar
+        fixed="top"
+        className ={ scrollPosition!==0 ? `box`: ''}
         style={{
-          color: `#56bc82`,
-         
+          backgroundColor: `#EDF1F3`,
         }}
-      
-      >Center</span>
-      </div>
+      >
+        <Container fluid>
+          <Nav
+            style={{
+              fontSize: `36px`,
+              textAlign: `center`,
+              fontWeight: `bold`,
+              fontFamily: `bold`,
+            }}
+          >
+            <Link to="/">
+              <span
+                style={{
+                  color: `black`,
+                }}
+              >
+                Addiction{" "}
+              </span>
+
+              <span
+                style={{
+                  color: `#56bc82`,
+                }}
+              >
+                Center
+              </span>
+            </Link>
+          </Nav>
+
           {data.map(menuItem => {
             const children = menuItem.childItems.nodes.length
               ? menuItem.childItems.nodes
               : null
 
             return children ? (
-              <DropdownMenuItem key={menuItem.id} parent={menuItem} children={children} />
+              <DropdownMenuItem
+                key={menuItem.id}
+                parent={menuItem}
+                children={children}
+              />
             ) : (
               <MenuItem menuItem={menuItem} />
             )
           })}
-          <div style={{
-        width: `60px`, 
-        height: `60px`, 
-        backgroundColor: `#ffff`, 
-        borderRadius: `50%`,
-        marginTop: `-1%`,
-        marginLeft: `5%`
-      }}> 
-      <span style={{
-        color: `#56BC82`,
-        marginLeft: `15px`, 
-        marginTop: `15px`
-
-      }}
-      className="material-icons">local_phone</span>
-      </div>
-        </>
-
-    )
-  }
+          <Nav>
+            <div
+              style={{
+                width: `60px`,
+                height: `60px`,
+                backgroundColor: `#ffff`,
+                borderRadius: `50%`,
+              }}
+            >
+              <span
+                style={{
+                  color: `#56BC82`,
+                  marginLeft: `15px`,
+                  marginTop: `15px`,
+                }}
+                className="material-icons"
+              >
+                local_phone
+              </span>
+            </div>
+          </Nav>
+        </Container>
+      </Navbar>
+    </>
+  )
 }
 
 export default MainMenu

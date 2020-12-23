@@ -1,15 +1,19 @@
 import React from "react"
+import { Container } from "react-bootstrap"
 import videoThumbNail from "../images/video-thumbnail.png"
 
 export default function videoBanner() {
   return (
     <div>
+    <Container fluid style={{
+      // maxWidth: `1800px`
+    }}> 
       <div
         style={{
           display: `flex`,
           flexDirection: `row`,
           width: `100%`,
-          background: `linear-gradient(251.4deg, #EDF1F3 7.07%, rgba(213, 215, 215, 0.412119) 28.27%, rgba(196, 196, 196, 0) 43.13%);`,
+          background: `#EDF1F3`,
           fontFamily: `Montserrat`,
           
         }}
@@ -29,8 +33,8 @@ export default function videoBanner() {
           />
           <div
             style={{
-              top: `235%`,
-              left: `29%`,
+              top: `78%`,
+              left: `20%`,
               position: `absolute`,
             }}
           >
@@ -132,6 +136,7 @@ export default function videoBanner() {
           </button>
         </div>
       </div>
+      </Container>
     </div>
   )
 }

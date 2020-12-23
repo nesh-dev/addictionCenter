@@ -1,158 +1,115 @@
-import { left } from "@popperjs/core"
 import React from "react"
+import { Row, Col, Container, Dropdown } from "react-bootstrap"
+import { CustomMenu, CustomToggle } from "../components/customDropDown"
 
 export default function rehabCenters() {
+  const filterOptions = [
+    { type: "levels of Care", filters: ""},
+    { type: "Payments"},
+    { type: "Mental Health"},
+    { type: "Substances"},
+  ]
   return (
     <div>
       <div
         style={{
-          height: `300px`,
-          width: `100%`,
+          height: `100%`,
           backgroundColor: `#ffff`,
         }}
       >
-        <div
-          style={{
-            display: `flex`,
-            flexDirection: `row`,
-          }}
-        >
-          <div
-            className="search"
+      <Container fluid style={{
+        maxWidth: `1600px`
+      }}>
+        <Row>
+          <Col
+            lg={{ span: 1, offset: 4 }}
+            xs={{ span: 2, offset: 1 }}
             style={{
-              width: ` 60px`,
-              height: ` 60px`,
-              border: `solid 2px rgba(229, 229, 229, 0.92)`,
-              backgroundColor: `#ffffff`,
-              borderRadius: `50%`,
-              marginLeft: `30%`,
-              marginTop: `5%`,
-            }}
-          >
-            <span
-              style={{
-                color: `#56bc82`,
-                fontSize: `36px`,
-                marginTop: `10px`,
-                marginLeft: `10px`,
-              }}
-              className="material-icons"
-            >
-              search
-            </span>
-          </div>
-          <div
-            style={{
-              marginLeft: `2%`,
               marginTop: `6%`,
-              fontFamily: `Montserrat`,
-              fontStyle: `normal`,
-              fontWeight: `600`,
-              fontSize: `36px`,
             }}
           >
-            Browse Treatment Centers
-          </div>
-        </div>
+            <div
+              className="search"
+              style={{
+                width: `60px`,
+                height: `60px`,
+                border: `solid 2px rgba(229, 229, 229, 0.92)`,
+                backgroundColor: `#ffffff`,
+                borderRadius: `50%`,
+                textAlign: `center`,
+                paddingTop: `10%`,
+              }}
+            >
+              <span
+                style={{
+                  color: `#56bc82`,
+                  fontSize: `36px`,
+                }}
+                className="material-icons"
+              >
+                search
+              </span>
+            </div>
+          </Col>
+          <Col
+            style={{
+              marginTop: `6%`,
+            }}
+          >
+            <span
+              style={{
+                fontFamily: `Montserrat`,
+                fontStyle: `normal`,
+                fontWeight: `600`,
+                fontSize: `30px`,
+              }}
+            >
+              Browse Treatment Centers
+            </span>
+          </Col>
+          {/* </div> */}
+        </Row>
+
         <div
           style={{
-            display: `flex`,
-            alignItems: `flex-start`,
-            flexDirection: `row`,
-            justifyContent: `space-around`,
-            marginTop: `3%`,
-            marginLeft: `9%`
+            marginRight: `5%`,
+            marginLeft: `5%`,
           }}
         >
-          <button
+          <Row
             style={{
-              backgroundColor: `#ffff`,
-              width: `15%`,
-              height: `40px`,
-              border: `2px solid rgba(229, 229, 229, 0.92)`,
-              borderRadius: `25px`,
+              marginTop: "2%",
             }}
           >
-            {" "}
-            Payments{" "}
-            <span
-              style={{
-                color: `#56BC82`,
-              }}
-              className="material-icons"
-            >
-              arrow_drop_down
-            </span>
-          </button>
-          <button
-            style={{
-              backgroundColor: `#ffff`,
-              width: `15%`,
-              height: `40px`,
-              border: `2px solid rgba(229, 229, 229, 0.92)`,
-              borderRadius: `25px`,
-            }}
-          >
-            {" "}
-            Levels of Care{" "}
-            <span
-              style={{
-                color: `#56BC82`,
-              }}
-              className="material-icons"
-            >
-              arrow_drop_down
-            </span>
-          </button>
-          <button
-            style={{
-              backgroundColor: `#ffff`,
-              width: `15%`,
-              height: `40px`,
-              border: `2px solid rgba(229, 229, 229, 0.92)`,
-              borderRadius: `25px`,
-            }}
-          >
-            {" "}
-            Mental Health{" "}
-            <span
-              style={{
-                color: `#56BC82`,
-              }}
-              className="material-icons"
-            >
-              arrow_drop_down
-            </span>
-          </button>
-          <button
-            style={{
-              backgroundColor: `#ffff`,
-              width: `15%`,
-              height: `40px`,
-              border: `2px solid rgba(229, 229, 229, 0.92)`,
-              borderRadius: `25px`,
-            }}
-          >
-            {" "}
-            Substances{" "}
-            <span
-              style={{
-                color: `#56BC82`,
-              }}
-              className="material-icons"
-            >
-              arrow_drop_down
-            </span>
-          </button>
+            {filterOptions.map(option => (
+              <>
+                <Col lg={3} md={6} xs={12}>
+                  <Dropdown
+                    style={{
+                      marginBottom: `15%`,
+                    }}
+                  >
+                    <Dropdown.Toggle
+                      as={CustomToggle}
+                      id="dropdown-custom-components"
+                    >
+                      {option.type}
+                    </Dropdown.Toggle>
 
-          <div style={{
-              display: `flex`,
-              flexDirection: `row`,
-          }}> 
-          
-          
-          </div>
+                    <Dropdown.Menu as={CustomMenu}>
+                      <Dropdown.Item ></Dropdown.Item>
+                      <Dropdown.Item ></Dropdown.Item>
+                      <Dropdown.Item >
+                      </Dropdown.Item>
+                      <Dropdown.Item ></Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Col>
+              </>
+            ))}
+          </Row>
         </div>
+        </Container>
       </div>
     </div>
   )

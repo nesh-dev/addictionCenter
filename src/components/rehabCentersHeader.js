@@ -1,93 +1,85 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import MainMenu from "../components/menu"
-import headerImage from "../images/header.svg"
-import {Container} from "react-bootstrap"
+import { Col, Row, Container } from "react-bootstrap"; 
+import  CarouselHeader from "../components/carouselHeader";
 
-const Header = ({ data }) => (
+const rehabCentersHeader = ({ post }) => {
+    
+  return (
+    <div>
+      <div style={{
+          marginTop: `5%`,
+         backgroundColor: `#79B091`,
+          height: `100%`
+      }}>
+      <Container fluid style={{
+          maxWidth: `1600px`
+      }}>
+        <Row>
+       
+          <Col lg={6}>
+          <Container fluid style={{
+            maxWidth: `80%`
+          }}> 
+                <h1 style={{
+                    marginTop: `20%`,
+                    fontFamily: `Montserrat`,
+                    fontStyle: `normal`,
+                    fontWeight: `bold`,
+                    fontSize: `50px`,
+                    lineHeight: `70px`,
+                    color:`#ffff`
+                }}> 
+                    {post.title}
+                </h1>
 
-    <header
-    style={{
-      width: `100%`, 
-      backgroundColor: `#EDF1F3`
-    }}
-  >
-  <Container fluid style={{
-    maxWidth: `1600px`
-  }}> 
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        fontFamily: `Montserrat`,
-        marginBottom: `3%`,
-      }}
-    >
-      {/* <MainMenu menu={data} /> */}
-    </div>
-    <div
-      style={{
-        display: `flex`,
-        flexDirection: "row",
-      }}
-    >
-      <div>
+                <div
+                style={{
+                  color: `#fff`,
+                  fontFamily: `Montserrat`,
+                  fontWeight: `bold`,
+                  fontSize: `20px`,
+                }}
+                ><span
+                style={{
+                  color: `#ffff`,
+                  marginRight: `20px`
+                  
+                }}
+                className="material-icons"
+              >
+                map 
+              </span>
+              Qunicy MA
+              </div>
+              <button
+                style={{
+                  height: `70px`,
+                  border: `solid 1px #ffffff`,
+                  backgroundColor: `var(--tea)`,
+                  color: `#ffff`,
+                  fontSize: `18px`,
+                  fontWeight: `bold`,
+                  width: `40%`,
+                  marginTop: `10%`
+                }}
+              >
+                Visit Website
+              </button>
+            </Container>
+          </Col>
+          <Col lg={6}>
+            <CarouselHeader post={post}/>
+          </Col>
+        </Row>
+        <Row> 
+        <Col lg={{span: 6, offset: 3}}>
         <div
           style={{
-            marginTop: `10%`,
-            marginLeft: `3%`,
-          }}
-        >
-          <p
-            style={{
-              fontFamily: `Montserrat`,
-              fontStyle: `normal`,
-              fontWeight: `bold`,
-              fontSize: `64px`,
-              lineHeight: `78px`,
-
-              color: `#000000`,
-            }}
-          >
-            We’re Here For You
-          </p>
-        </div>
-        <div
-          style={{
-            fontSize: `24px`,
-            lineHeight: `29px`,
-            textAlign: `center`,
-            marginTop: `2%`,
-            marginLeft: `5%`,
-            width: `50%`,
-          }}
-        >
-          We'll help you find a drug or alcohol rehab solution. Enter your phone
-          number to receive a call from a treatment professional.
-        </div>
-
-        <div
-          style={{
-            fontWeight: `bold`,
-            fontSize: `24px`,
-            lineHeight: `29px`,
-            marginLeft: `5%`,
-            marginTop: `10%`,
-          }}
-        >
-          Speak with a treatment professional
-        </div>
-
-        <div
-          style={{
-            marginBottom: `3%`,
             backgroundSize: `cover`,
             overflow: `hidden`,
-            marginTop: `5%`,
             marginLeft: `5%`,
-            width: `70%`,
+            marginBottom: `5%`,
+
             backgroundColor: `#ffff`,
             height: `100px`,
             borderRadius: `10px`,
@@ -146,6 +138,7 @@ const Header = ({ data }) => (
                 display: `flex`,
                 flexDirection: `column`,
                 padding: `10px`,
+                marginRight: `30px`
               }}
             >
               <div
@@ -160,14 +153,13 @@ const Header = ({ data }) => (
               <div
                 style={{
                   marginTop: `10px`,
-                  width: `8%`,
                 }}
               >
                 <input
                   style={{
                     border: ` solid 1px rgba(229, 229, 229, 0.92)`,
                     borderRadius: `10px`,
-                    width: `200px`,
+                    width: `250px`,
                     height: `40px`,
                     textAlign: `center`,
                   }}
@@ -185,7 +177,6 @@ const Header = ({ data }) => (
                 display: `flex`,
                 flexDirection: `column`,
                 marginTop: `25px`,
-                marginLeft: `3px`,
               }}
             >
               <span
@@ -201,32 +192,14 @@ const Header = ({ data }) => (
               </span>
             </div>
           </div>
-        </div>
-      </div>
-      <div>
-        <img
-          src={headerImage}
-          alt={headerImage}
-          style={{
-            color: `#56BC82`,
-            width: `100%`,
-            marginTop: `10%`
-          }}
-        />
+        </div>  
+        </Col> 
+        </Row>
+     
+        </Container>
       </div>
     </div>
-    </Container>
-  </header>
-
-  
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+  )
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+export default rehabCentersHeader

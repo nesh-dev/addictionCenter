@@ -1,0 +1,13 @@
+.highlighted {
+    background-color:#79B091;
+    height: 60px;
+    color: #ffff;
+}
+
+.highlightedIcon { 
+    color: #fff;
+}
+
+.icon {
+    color: #79B091;
+}

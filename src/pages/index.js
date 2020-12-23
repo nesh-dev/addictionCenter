@@ -9,23 +9,13 @@ import RehabListing from "../components/RehabListings"
 import Image from "../components/image"
 import VideoBanner from "../components/videoBanner"
 import NewsLetter from "../components/newsLetter"
-import FeaturedBlog from "../components/featuredBlog"
+import FeaturedBlog from "../components/featuredBlog"; 
+import Header from "../components/header"
 
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    {/*      
-      <section>
-        {data.allWpPost.nodes.map((post) => (
-          <div className="post-preview" key={post.slug}>
-            <Image className="featured-image" fluid={post.featuredImage.node.localFile.childImageSharp.fluid} /> // new
-            <Link to={post.slug}>
-              {post.title}
-            </Link>
-            <div className='excerpt' dangerouslySetInnerHTML={{ __html: post.excerpt }} /> // new
-          </div>
-        ))}
-      </section> */}
+    <section><Header /></section>
     <section>
       <Covid19Banner />
     </section>

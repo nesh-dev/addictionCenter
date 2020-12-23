@@ -10,7 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  font-family: Montserrat;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -26,8 +26,7 @@ figcaption,
 figure,
 footer,
 header,
-main,
-menu,
+
 nav,
 section,
 summary {
@@ -57,6 +56,7 @@ a {
 a:active,
 a:hover {
   outline-width: 0;
+
 }
 abbr[title] {
   border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
@@ -81,8 +81,7 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Montserrat;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
@@ -260,8 +259,7 @@ h2 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Montserrat;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
@@ -294,8 +292,7 @@ h4 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Montserrat;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
@@ -311,8 +308,7 @@ h5 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Montserrat;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
@@ -590,11 +586,11 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
-@media only screen and (max-width: 480px) {
+/* @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
   }
-}
+} */
 
 .posts-container {
   display: flex;
@@ -609,14 +605,53 @@ pre tt:after {
   margin-bottom: 1rem;
 }
 body {
-  background: #EEE;
+  background: #ffff
 }
 h1 {
-  font-family: monospace;
+  font-family: Montserrat;
 }
 
 .post-preview {
   box-shadow: 0 0 20px 10px #CCC;
   margin: 1rem;
   padding: 1rem;
+}
+
+a:link {
+
+
+  text-decoration: none;
+
+
+}
+
+
+a:visited {
+
+
+  text-decoration: none;
+
+
+}
+
+.box { 
+  box-shadow: 0 1px 22px 0 rgba(0, 0, 0, 0.5);
+}
+
+
+a:hover {
+
+
+  text-decoration: none;
+
+
+}
+
+
+a:active {
+
+
+  text-decoration: none;
+
+
 }
